@@ -1,0 +1,34 @@
+See the source code and more examples here: https://github.com/plotly/knitr-plotly
+
+```{r}
+library(plotly)
+p = plotly('R-demos', 'p9g4f35ytd')
+```
+
+```{r}
+#Load maps
+library(maps)
+data(canada.cities)
+
+#Create the hexagone map
+trace1 <- list(x=map(regions="canada", plot=FALSE)$x, 
+               y=map(regions="canada", plot=FALSE)$y)
+
+#Create the plotable city data
+trace2 <- list(x= canada.cities$long, 
+               y=canada.cities$lat,
+               text=canada.cities$name,
+               type="scatter",
+               mode="markers",
+               marker=list("size"=sqrt(canada.cities$pop/max(canada.cities$pop))*100,
+                           "opacity"=0.5))
+```
+
+```{r, plotly=TRUE, width=600, height=600}
+p$iplot(trace1, trace2, kwargs=list(filename='canadian cities'))
+```
+
+```{r, plotly=TRUE, width=600, height=600}
+p$embed('https://plot.ly/~ChrisP/9/600/600')
+```
+
