@@ -1,4 +1,4 @@
-See the source code and more examples here: https://github.com/plotly/knitr-plotly
+See the source code and more examples here: https://github.com/plotly/knitr-demos
 
 
 ```r
@@ -46,7 +46,7 @@ p$iplot(trace1, trace2, kwargs = list(filename = "canadian cities"))
 ```
 
 <iframe height="600" id="igraph" scrolling="no" seamless="seamless"
-				src="https://plot.ly/~R-demos/2" width="600"></iframe>
+				src="https://plot.ly/~R-demos/3" width="600"></iframe>
 
 
 

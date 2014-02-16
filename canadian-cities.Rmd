@@ -1,4 +1,4 @@
-See the source code and more examples here: https://github.com/plotly/knitr-plotly
+See the source code and more examples here: https://github.com/plotly/knitr-demos
 
 ```{r}
 library(plotly)
