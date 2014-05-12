@@ -2,15 +2,19 @@ Bar Charts
 ========================================================
 (See the source code and more examples here: https://github.com/plotly/knitr-demos)
 
-In `ggplot2`, you plot bar charts using `geom_bar` plus `stat_identity`. 
+In `ggplot2`, you plot bar charts using `geom_bar` plus `stat_identity`.
 
 ```{r}
 library(ggplot2)
+library(plotly)
 library(devtools)
 install_github("ropensci/plotly")
 # Initialize a plotly object to sign in to your Plotly API account
 py <- plotly('R-demos', 'p9g4f35ytd')
 ```
+
+Basic Bar Chart
+===
 
 ```{r}
 # Consider the following data frame
@@ -19,6 +23,27 @@ researchers <- data.frame(country=c("Canada", "Canada", "Germany", "USA"),
                           papers=c(23, 14, 37, 20),
                           field=c("Math", "Bio", "Bio", "Math"))
 
+# Let us plot the number of papers (y) per name (x)
+gg.basic <- ggplot(researchers, aes(x=name, y=papers)) +
+  geom_bar(stat="identity")
+```
+
+In R your plot looks like this:
+
+```{r fig.width=7, fig.height=6}
+print(gg.basic)
+```
+
+Now send it to Plotly!
+
+```{r, plotly=TRUE, width=600, height=600}
+py$ggplotly(gg.basic)
+```
+
+Grouped Bar Chart
+===
+
+```{r}
 # Let us plot the number of papers (y) per country (x) splitting by field
 gg.dodge <- ggplot(researchers, aes(x=country, y=papers, fill=field)) +
   geom_bar(stat="identity", position="dodge")
@@ -41,3 +66,26 @@ Oh, the default colors are different.  Let us change the colors the way we like 
 ```{r, plotly=TRUE, width=600, height=600}
 py$embed("https://plot.ly/~R-demos/11/papers-vs-country/")
 ```
+
+Overlaid Bar Chart
+===
+
+```{r}
+# Let us plot the same thing but with a different layout (barmode='overlay')
+gg.identity <- ggplot(researchers, aes(x=country, y=papers, fill=field)) +
+  geom_bar(stat="identity", position="identity")
+```
+
+In R your plot looks like this:
+
+```{r fig.width=7, fig.height=6}
+print(gg.identity)
+```
+
+Send it to Plotly!
+
+```{r, plotly=TRUE, width=600, height=600}
+py$ggplotly(gg.identity)
+```
+
+You need to hover over the 'Canada' bar to see the info for 'Bio' (i.e., 14), which lies underneath.
