@@ -11,6 +11,9 @@ Hello ggplotly (Getting started)
 [http://rpubs.com/tdhock/hello-ggplotly](http://rpubs.com/tdhock/hello-ggplotly)
 (Source at [https://github.com/tdhock/plotly-demos](https://github.com/tdhock/plotly-demos))
 
+Check out this awesome blog post:
+[http://ropensci.org/blog/2014/04/17/plotly/](http://ropensci.org/blog/2014/04/17/plotly/)
+
 Bar charts
 ---
 [http://rpubs.com/plotly/bar-charts](http://rpubs.com/plotly/bar-charts)
