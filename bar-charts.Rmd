@@ -16,7 +16,7 @@ py <- plotly('R-demos', 'p9g4f35ytd')
 Basic Bar Chart
 ===
 
-```{r}
+```{r, tidy=FALSE}
 # Consider the following data frame
 researchers <- data.frame(country=c("Canada", "Canada", "Germany", "USA"),
                           name=c("Warren", "Andreanne", "Stefan", "Toby"),
@@ -65,6 +65,27 @@ Oh, the default colors are different.  Let us change the colors the way we like 
 
 ```{r, plotly=TRUE, width=600, height=600}
 py$embed("https://plot.ly/~R-demos/11/papers-vs-country/")
+```
+
+Stacked Bar Chart
+===
+
+```{r}
+# Let us plot the same thing but with a different layout (barmode='stack')
+gg.stack <- ggplot(researchers, aes(x=country, y=papers, fill=field)) +
+  geom_bar(stat="identity", position="stack")
+```
+
+In R your plot looks like this:
+
+```{r fig.width=7, fig.height=6}
+print(gg.stack)
+```
+
+Send it to Plotly!
+
+```{r, plotly=TRUE, width=600, height=600}
+py$ggplotly(gg.stack)
 ```
 
 Overlaid Bar Chart
