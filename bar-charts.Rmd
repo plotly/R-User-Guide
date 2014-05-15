@@ -16,7 +16,7 @@ py <- plotly('R-demos', 'p9g4f35ytd')
 Basic Bar Chart
 ===
 
-```{r}
+```{r, tidy=FALSE}
 # Consider the following data frame
 researchers <- data.frame(country=c("Canada", "Canada", "Germany", "USA"),
                           name=c("Warren", "Andreanne", "Stefan", "Toby"),

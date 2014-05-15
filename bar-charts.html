@@ -207,11 +207,11 @@ library(devtools)
 
 <pre><code>## Installing github repo plotly/master from ropensci
 ## Downloading master.zip from https://github.com/ropensci/plotly/archive/master.zip
-## Installing package from /tmp/RtmpG0q1r8/master.zip
+## Installing package from /tmp/RtmpXBik3s/master.zip
 ## arguments &#39;minimized&#39; and &#39;invisible&#39; are for Windows only
 ## Installing plotly
 ## &#39;/usr/lib/R/bin/R&#39; --vanilla CMD INSTALL  \
-##   &#39;/tmp/RtmpG0q1r8/devtools6ea031063046/plotly-master&#39;  \
+##   &#39;/tmp/RtmpXBik3s/devtools3f1e6fbcc5b8/plotly-master&#39;  \
 ##   --library=&#39;/home/marianne/R/x86_64-pc-linux-gnu-library/3.1&#39;  \
 ##   --install-tests 
 ## 
@@ -225,12 +225,14 @@ py &lt;- plotly(&quot;R-demos&quot;, &quot;p9g4f35ytd&quot;)
 <h1>Basic Bar Chart</h1>
 
 <pre><code class="r"># Consider the following data frame
-researchers &lt;- data.frame(country = c(&quot;Canada&quot;, &quot;Canada&quot;, &quot;Germany&quot;, &quot;USA&quot;), 
-    name = c(&quot;Warren&quot;, &quot;Andreanne&quot;, &quot;Stefan&quot;, &quot;Toby&quot;), papers = c(23, 14, 37, 
-        20), field = c(&quot;Math&quot;, &quot;Bio&quot;, &quot;Bio&quot;, &quot;Math&quot;))
+researchers &lt;- data.frame(country=c(&quot;Canada&quot;, &quot;Canada&quot;, &quot;Germany&quot;, &quot;USA&quot;),
+                          name=c(&quot;Warren&quot;, &quot;Andreanne&quot;, &quot;Stefan&quot;, &quot;Toby&quot;),
+                          papers=c(23, 14, 37, 20),
+                          field=c(&quot;Math&quot;, &quot;Bio&quot;, &quot;Bio&quot;, &quot;Math&quot;))
 
 # Let us plot the number of papers (y) per name (x)
-gg.basic &lt;- ggplot(researchers, aes(x = name, y = papers)) + geom_bar(stat = &quot;identity&quot;)
+gg.basic &lt;- ggplot(researchers, aes(x=name, y=papers)) +
+  geom_bar(stat=&quot;identity&quot;)
 </code></pre>
 
 <p>In R your plot looks like this:</p>
@@ -246,7 +248,7 @@ gg.basic &lt;- ggplot(researchers, aes(x = name, y = papers)) + geom_bar(stat = 
 </code></pre>
 
 <iframe height="600" id="igraph" scrolling="no" seamless="seamless"
-                src="https://plot.ly/~R-demos/25" width="600" frameBorder="0"></iframe>
+                src="https://plot.ly/~R-demos/53" width="600" frameBorder="0"></iframe>
 
 <h1>Grouped Bar Chart</h1>
 
@@ -268,7 +270,7 @@ gg.dodge &lt;- ggplot(researchers, aes(x = country, y = papers, fill = field)) +
 </code></pre>
 
 <iframe height="600" id="igraph" scrolling="no" seamless="seamless"
-                src="https://plot.ly/~R-demos/26" width="600" frameBorder="0"></iframe>
+                src="https://plot.ly/~R-demos/54" width="600" frameBorder="0"></iframe>
 
 <p>Oh, the default colors are different.  Let us change the colors the way we like using Plotly&#39;s UI.  Say we are happy with the following:</p>
 
@@ -298,7 +300,7 @@ gg.stack &lt;- ggplot(researchers, aes(x = country, y = papers, fill = field)) +
 </code></pre>
 
 <iframe height="600" id="igraph" scrolling="no" seamless="seamless"
-                src="https://plot.ly/~R-demos/27" width="600" frameBorder="0"></iframe>
+                src="https://plot.ly/~R-demos/55" width="600" frameBorder="0"></iframe>
 
 <h1>Overlaid Bar Chart</h1>
 
@@ -320,7 +322,7 @@ gg.identity &lt;- ggplot(researchers, aes(x = country, y = papers, fill = field)
 </code></pre>
 
 <iframe height="600" id="igraph" scrolling="no" seamless="seamless"
-                src="https://plot.ly/~R-demos/28" width="600" frameBorder="0"></iframe>
+                src="https://plot.ly/~R-demos/56" width="600" frameBorder="0"></iframe>
 
 <p>You need to hover over the &#39;Canada&#39; bar to see the info for &#39;Bio&#39; (i.e., 14), which lies underneath.</p>
 
