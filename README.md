@@ -14,13 +14,13 @@ Hello ggplotly (Getting started)
 Check out this awesome blog post:
 [http://ropensci.org/blog/2014/04/17/plotly/](http://ropensci.org/blog/2014/04/17/plotly/)
 
+Line shapes
+---
+[Notebook](http://nbviewer.ipython.org/github/plotly/R-User-Guide/blob/master/line-shapes.ipynb)
+
 Bar charts
 ---
 [http://rpubs.com/plotly/bar-charts](http://rpubs.com/plotly/bar-charts)
-
-Line shapes
----
-Coming soon
 
 Histograms
 ---
