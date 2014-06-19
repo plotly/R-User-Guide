@@ -4,7 +4,7 @@ Demos for ggplotly
 ggplotly is under development so, for the time being, you will not be able to
 pass *any* ggplot2 object to the `ggplotly()` function.
 
-For refernce, here is a list of working examples:
+For reference, here is a list of working examples:
 
 Hello ggplotly (Getting started)
 ---
@@ -13,6 +13,10 @@ Hello ggplotly (Getting started)
 
 Check out this awesome blog post:
 [http://ropensci.org/blog/2014/04/17/plotly/](http://ropensci.org/blog/2014/04/17/plotly/)
+
+Overview
+---
+[Notebook](http://nbviewer.ipython.org/github/plotly/R-User-Guide/blob/master/overview.ipynb)
 
 Line shapes
 ---
