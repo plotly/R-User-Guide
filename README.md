@@ -28,7 +28,7 @@ Bar charts
 
 Histograms
 ---
-Coming soon
+[Notebook](http://nbviewer.ipython.org/github/plotly/R-User-Guide/blob/master/histograms.ipynb)
 
 ---------
 
