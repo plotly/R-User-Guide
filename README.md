@@ -1,3 +1,7 @@
+Overview
+===
+[Notebook](http://nbviewer.ipython.org/github/plotly/R-User-Guide/blob/master/overview.ipynb)
+
 Demos for ggplotly
 ===
 
@@ -14,10 +18,6 @@ Hello ggplotly (Getting started)
 Check out this awesome blog post:
 [http://ropensci.org/blog/2014/04/17/plotly/](http://ropensci.org/blog/2014/04/17/plotly/)
 
-Overview
----
-[Notebook](http://nbviewer.ipython.org/github/plotly/R-User-Guide/blob/master/overview.ipynb)
-
 Line shapes
 ---
 [Notebook](http://nbviewer.ipython.org/github/plotly/R-User-Guide/blob/master/line-shapes.ipynb)
@@ -28,7 +28,7 @@ Bar charts
 
 Histograms
 ---
-Coming soon
+[Notebook](http://nbviewer.ipython.org/github/plotly/R-User-Guide/blob/master/histograms.ipynb)
 
 ---------
 
