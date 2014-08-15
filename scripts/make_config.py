@@ -38,7 +38,7 @@ def get_config(chapter):
 
     # Set fields
     name = base.capitalize().replace(' tutorial','')
-    title = "{} | Python User Guide | plotly".format(titled(base))
+    title = "{} | R User Guide | plotly".format(titled(base))
     descrip = (
         "A tutorial on how to make beautiful {} "
         "with plotly and R."
@@ -49,6 +49,12 @@ def get_config(chapter):
         name = ""
         title = "R User Guide | plotly"
         descrip = "A User Guide for R and its Python API Library."
+
+    if chapter == 'line-shapes':
+        descrip = (
+            "A tutorial on how to make beautiful line plots "
+            "and line shapes with plotly and R."
+        )
 
     # Output
     config = dict(
