@@ -1,5 +1,3 @@
 {
-    "overview.ipynb" : "user-guide",
-    "line-shapes.ipynb" : "line-shapes-tutorial",
-    "histograms.ipynb" : "histograms-tutorial"
+    "pretty-r-ggplot2.ipynb" : "user-guide"
 }

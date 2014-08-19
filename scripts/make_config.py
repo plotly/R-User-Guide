@@ -47,8 +47,8 @@ def get_config(chapter):
     # Exceptions (fields)
     if chapter == 'user-guide':
         name = ""
-        title = "R User Guide | plotly"
-        descrip = "A User Guide for plotly and its R API Library."
+        title = "R and ggplot2 User Guide | plotly"
+        descrip = "A User Guide for plotly and its R and ggplot2 API Libraries."
 
     if chapter == 'line-shapes':
         descrip = (

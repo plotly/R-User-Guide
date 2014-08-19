@@ -2,9 +2,10 @@ instructions:
 	cat Contributing.md
 
 # List of notebooks paths to be used in the plot.ly User Guide
-ug-nbs = overview.ipynb \
-		 line-shapes.ipynb \
-		 histograms.ipynb
+#ug-nbs = overview.ipynb \
+#		 line-shapes.ipynb \
+#		 histograms.ipynb
+ug-nbs = pretty-r-ggplot2.ipynb
 
 convert: $(ug-nbs)
 	ipython nbconvert --to html $(ug-nbs)
