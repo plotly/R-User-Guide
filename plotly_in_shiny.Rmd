@@ -1,9 +1,9 @@
 Plotly in Shiny
 ========================================================
 
-Shiny is an R library to create web applications with your data. If you have never used it before you should read RStudio’s tutorial here: http://shiny.rstudio.com/
+Shiny is an R package to create web applications with your data. If you have never used it before you should read RStudio’s tutorial here: http://shiny.rstudio.com/
 
-We will start with a basic example of Plotly in Shiny using group checkbox, and ggplot’s “iris” dataset.
+We will start with a basic example of Plotly in Shiny using group checkbox, and ggplot’s iris dataset.
 
 ```{r}
 summary(iris)
@@ -12,25 +12,27 @@ summary(iris)
 Our ui.R file:
 
 ```{r, eval=FALSE}
-library("shiny")
+library(shiny) 
+
 shinyUI(
   pageWithSidebar(
     
     headerPanel(title=HTML("Plotly in Shiny"), windowTitle="Plotly in Shiny"),
     
     sidebarPanel(
-      checkboxGroupInput(inputId="check_group", # ID to be used in server.R
+      checkboxGroupInput(inputId="check_group",  # ID to be used in server.R
                          label="Select species:",
-                         choices=list("Setosa"="setosa", # Make sure not to mix names with values
+                         choices=list("Setosa"="setosa",  # Make sure not to mix names with values
                                       "Versicolor"="versicolor",
                                       "Virginica"="virginica"),
                          selected=list("setosa", "versicolor", "virginica"))
       ),
     
     mainPanel(
-      htmlOutput("plot") # Argument name from server.R
+      htmlOutput("plot")  # Argument name from server.R
       )
     ))
+
 ```
 
 Remember to add commas after sidebarPanel() and headerPanel(). 
@@ -39,31 +41,34 @@ For more information on checkboxGroupInput() click here: http://shiny.rstudio.co
 Our server.R:
 
 ```{r, eval=FALSE}
-library("shiny") # Load libraries we will be using
-library("plotly")
-library("ggplot2")
+library(shiny) # Load libraries we will be using
+library(plotly)
 
 shinyServer(function(input, output) {
-  output$plot <- renderUI({ # "plot" to be used as argument in server.R
+  
+  output$plot <- renderUI({  # "main" to be used as argument in server.R
+
+    subset_iris <- iris[iris$Species %in% input$check_group, ]  # Subset dataset
     
-    subset_iris <- iris[iris$Species %in% input$check_group, ] # Subset dataset, using "check_group" argument from server.R
     ggiris <- qplot(x=Petal.Width, y=Sepal.Length, data=subset_iris, color=Species)
-    
-    py <- plotly(username="pdespouy", key="rl18kwjamr") # Open Plotly connection
+
+    py <- plotly(username="r_user_guide", key="mw5isa4yqp")  # Open Plotly connection
     
     res <- py$ggplotly(ggiris, kwargs=list(filename="Plotly in Shiny", 
                                            fileopt="overwrite", # Overwrite plot in Plotly's website
                                            auto_open=FALSE))
-    
+
     tags$iframe(src=res$response$url,
-                frameBorder="0", # Some aesthetics
-                height=400,
-                width=650)
+                  frameBorder="0",  # Some aesthetics
+                  height=400,
+                  width=650)
+ 
   })
 })
+
 ```
 
-For more informaiton on tags$iframe() click here: http://shiny.rstudio.com/articles/tag-glossary.html
+For more information on tags$iframe() click here: http://shiny.rstudio.com/articles/tag-glossary.html
 
 Then after you make sure ui.R and server.R are in the same folder (and working directory), run on your console:
 
@@ -73,4 +78,4 @@ runApp()
 
 And voilà, a Shiny app using Plotly!
 
-<iframe src="http://pedrodz.shinyapps.io/shiny_example/" width="1000" height="500" frameBorder="0"></iframe>
+<iframe src="http://plotly.shinyapps.io/plotly_in_shiny/" width="1000" height="500" frameBorder="0"></iframe>
