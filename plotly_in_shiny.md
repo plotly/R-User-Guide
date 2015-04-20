@@ -77,10 +77,11 @@ shinyServer(function(input, output) {
                                            fileopt="overwrite", # Overwrite plot in Plotly's website
                                            auto_open=FALSE))
 
-    tags$iframe(src=res$response$url,
+    tags$object(tags$embed(
+                  src=res$response$url,
                   frameBorder="0",  # Some aesthetics
                   height=400,
-                  width=650)
+                  width=650))
  
   })
 })
